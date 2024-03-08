@@ -91,3 +91,22 @@ TOTAL                            4      0      0      0   100%
 
 ============================== 2 passed in 0.03s ===============================
 ```
+
+## Tox testing
+
+You can also execute the tests using tox, which allows you to quickly run the tests in different variants
+(f.i. different Python versions). The added configuration will run pytest using 2 Python versions, and will also
+check the code for formatting issues using `black` and `isort`, and it will check whether the code has proper 
+type annotations using `mypy`.
+
+```shell
+$ pip install tox
+[...]
+tox run
+[...] (lots of output)
+  py38: OK (5.42=setup[5.11]+cmd[0.31] seconds)
+  py310: OK (3.89=setup[3.59]+cmd[0.30] seconds)
+  linters: OK (3.62=setup[3.31]+cmd[0.20,0.10] seconds)
+  types: OK (3.97=setup[3.83]+cmd[0.14] seconds)
+  congratulations :) (16.95 seconds)
+```
