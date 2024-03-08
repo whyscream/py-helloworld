@@ -1,8 +1,13 @@
 # Development files
 .idea/
 .venv/
+src/helloworld.egg-info/
 
 # Python artifacts
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Build artifacts
+build/
+dist/
