@@ -22,5 +22,33 @@ classifiers = [
 ]
 dependencies = []
 
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "pytest-cov",
+]
+
 [project.scripts]
 hello = "helloworld.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "--cov"
+
+[tool.coverage.run]
+source_pkgs = ["helloworld"]
+branch = true
+parallel = true
+omit = [
+  "src/helloworld/__main__.py",
+  "src/helloworld/cli.py",
+]
+
+[tool.coverage.paths]
+helloworld = ["src/helloworld"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

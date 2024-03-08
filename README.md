@@ -58,3 +58,36 @@ $ pip install ./dist/helloworld-0.0.0-py3-none-any.whl
 [...]
 Successfully installed helloworld-0.0.0
 ```
+
+
+## Test suite
+
+A basic test suite is added, which tests functionality of the hello function. Note that the cli interface is
+omitted from the tests: this can be done but is too complex for this example.
+
+To run the test suite, install the package (from the repo) with test dependencies, and run the `pytest` command.
+
+```shell
+$ pip install -e .[test]
+[...]
+$ pytest
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.0.2, pluggy-1.4.0
+rootdir: /home/[...]/helloworld
+configfile: pyproject.toml
+plugins: cov-4.1.0
+collected 2 items
+
+tests/test_hello.py ..                                                   [100%]
+
+---------- coverage: platform linux, python 3.10.12-final-0 ----------
+Name                         Stmts   Miss Branch BrPart  Cover
+--------------------------------------------------------------
+src/helloworld/__init__.py       2      0      0      0   100%
+src/helloworld/hello.py          2      0      0      0   100%
+--------------------------------------------------------------
+TOTAL                            4      0      0      0   100%
+
+
+============================== 2 passed in 0.03s ===============================
+```

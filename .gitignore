@@ -11,3 +11,7 @@ __pycache__/
 # Build artifacts
 build/
 dist/
+
+# Test artifacts
+.coverage
+.pytest_cache/
