@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools.dynamic]
+version = {attr = "helloworld.__version__"}
+
+[project]
+name = "helloworld"
+dynamic = ["version"]
+description = 'Example minimal project'
+readme = "README.md"
+requires-python = ">=3.8"
+license = { "file" = "LICENSE" }
+keywords = []
+authors = [
+  { name = "John Doe", email = "johndoe@example.org" },
+]
+classifiers = [
+  "Programming Language :: Python",
+]
+dependencies = []
